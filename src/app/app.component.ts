@@ -11,6 +11,7 @@ export class AppComponent {
 
   sourceList: Satellite[];
   displayList: Satellite[];
+  typeList: string[];
 
 	constructor() {
 		this.sourceList = [];
@@ -29,9 +30,9 @@ export class AppComponent {
 					this.sourceList.push(satellite);
 				 }
 
-				 // make a copy of the sourceList to be shown to the user
-				 this.displayList = this.sourceList.slice(0);
-	  
+				// make a copy of the sourceList to be shown to the user
+				this.displayList = this.sourceList.slice(0);
+				this.typeList = this.satelliteTypeList(this.sourceList);
 			}.bind(this));
 		}.bind(this));
 
@@ -44,7 +45,7 @@ export class AppComponent {
 			let name = this.sourceList[i].name.toLowerCase();
 			let type = this.sourceList[i].type.toLowerCase();
 			let orbitType = this.sourceList[i].orbitType.toLowerCase();
-			if (name.indexOf(searchTerm) >= 0 || type.indexOf(searchTerm) >= 0 || orbitType.indexOf(searchTerm) >= 0) {
+			if (name.indexOf(searchTerm) >= 0 || type === searchTerm || orbitType === searchTerm) {
 				matchingSatellites.push(this.sourceList[i]);
 			}
 		}
@@ -53,5 +54,13 @@ export class AppComponent {
 		this.displayList = matchingSatellites;
 	}
 
+	satelliteTypeList(satellites: Satellite[]): string[] {
+		let differntTypes = [];
+		for(let i = 0; i < satellites.length; i++) {
+			if(differntTypes.indexOf(satellites[i].type) === -1)
+			differntTypes.push(satellites[i].type);
+		}
+		return differntTypes;
+	}
 
 }
