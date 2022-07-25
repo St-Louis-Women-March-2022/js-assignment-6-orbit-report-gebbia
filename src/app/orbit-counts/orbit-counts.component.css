@@ -1,5 +1,5 @@
 .counts {
-	background: #34495E;
+	background: #4db367;
 	color: #fff;
 	border-radius: 5px;
 	width: 225px;
@@ -11,4 +11,8 @@
 
 .counts span {
 	float: right;
+}
+
+.counts div:nth-child(odd) {
+	background: black;
 }
