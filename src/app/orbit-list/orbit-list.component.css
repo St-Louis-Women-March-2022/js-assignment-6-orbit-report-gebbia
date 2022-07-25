@@ -1,10 +1,14 @@
+body {
+	background: #2C3531;
+}
+
 .sortable {
 	cursor: pointer;
-	color: #dd5;
+	color: #D79922;
 }
 
 .warning {
-	background-color: #da8a8a;
+	background-color: #F13C20;
 }
 
 table {
@@ -13,11 +17,11 @@ table {
  overflow: hidden;
  margin: 12px 0;
  min-width: 300px;
- background: #a5a5a5;
+ background: #C5CBE3;
 }
 
 .header-row {
-	background: #000000;
+	background: #4056A1;
 	color: #fff
 }
 
@@ -28,5 +32,5 @@ th, td {
 }
 
 tr:nth-child(even) {
-	background: #c291c7;
+	background: #EFE2BA;
 }
